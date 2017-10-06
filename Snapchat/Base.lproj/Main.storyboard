@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,11 +76,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="36" y="37"/>
         </scene>
         <!--Snaps View Controller-->
         <scene sceneID="y9E-UK-mCU">
             <objects>
-                <viewController id="w0g-I2-Jeq" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="w0g-I2-Jeq" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K1u-SC-dla"/>
                         <viewControllerLayoutGuide type="bottom" id="eH5-Ph-Ltu"/>
@@ -87,7 +89,19 @@
                     <view key="view" contentMode="scaleToFill" id="k8I-5g-gQg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4A-pa-0w2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t4A-pa-0w2" firstAttribute="leading" secondItem="k8I-5g-gQg" secondAttribute="leading" id="1yC-Kj-VME"/>
+                            <constraint firstAttribute="trailing" secondItem="t4A-pa-0w2" secondAttribute="trailing" id="BFJ-Tz-thZ"/>
+                            <constraint firstItem="t4A-pa-0w2" firstAttribute="top" secondItem="K1u-SC-dla" secondAttribute="bottom" id="bDC-Yd-HfD"/>
+                            <constraint firstItem="eH5-Ph-Ltu" firstAttribute="top" secondItem="t4A-pa-0w2" secondAttribute="bottom" id="erU-MS-jya"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mkC-yc-Hp5">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="dD1-YH-eOR">
@@ -101,10 +115,56 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="t4A-pa-0w2" id="JXm-pK-qNp"/>
+                        <segue destination="cUc-em-iCz" kind="show" identifier="viewsnapsegue" id="0f8-Pn-y1a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9m-O9-HXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1717.5999999999999" y="37.331334332833585"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="2Az-H9-rIt">
+            <objects>
+                <viewController id="cUc-em-iCz" customClass="ViewSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="avp-pU-mDl"/>
+                        <viewControllerLayoutGuide type="bottom" id="GdG-4B-gsl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xcd-i5-bid">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is me saying hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jol-JO-h4h">
+                                <rect key="frame" x="21" y="636" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-JV-IE3">
+                                <rect key="frame" x="26" y="74" width="323" height="552"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jol-JO-h4h" firstAttribute="leading" secondItem="Xcd-i5-bid" secondAttribute="leadingMargin" constant="5" id="Dab-Ct-eh0"/>
+                            <constraint firstItem="jol-JO-h4h" firstAttribute="top" secondItem="aCe-JV-IE3" secondAttribute="bottom" constant="10" id="ULM-aP-qgI"/>
+                            <constraint firstItem="aCe-JV-IE3" firstAttribute="top" secondItem="avp-pU-mDl" secondAttribute="bottom" constant="10" id="UlV-vC-VQK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aCe-JV-IE3" secondAttribute="trailing" constant="10" id="ajL-WP-3T1"/>
+                            <constraint firstItem="GdG-4B-gsl" firstAttribute="top" secondItem="jol-JO-h4h" secondAttribute="bottom" constant="10" id="t2D-M0-8jp"/>
+                            <constraint firstItem="aCe-JV-IE3" firstAttribute="leading" secondItem="Xcd-i5-bid" secondAttribute="leadingMargin" constant="10" id="u5c-f9-EQa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jol-JO-h4h" secondAttribute="trailing" constant="5" id="y4o-wn-YrS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aCe-JV-IE3" id="OuR-zj-4CH"/>
+                        <outlet property="label" destination="jol-JO-h4h" id="Xof-O3-rGD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOO-rY-gQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="780"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="e6A-76-Vnu">
@@ -185,20 +245,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1lQ-aB-ma7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="No8-CG-Kb3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1lQ-aB-ma7" firstAttribute="leading" secondItem="IZY-tr-GlD" secondAttribute="leading" id="UPD-PR-1fG"/>
-                            <constraint firstItem="1lQ-aB-ma7" firstAttribute="top" secondItem="jC6-uj-ePt" secondAttribute="bottom" id="bzd-Mx-YMx"/>
-                            <constraint firstAttribute="trailing" secondItem="1lQ-aB-ma7" secondAttribute="trailing" id="wnc-QT-FSu"/>
+                            <constraint firstAttribute="trailing" secondItem="No8-CG-Kb3" secondAttribute="trailing" id="KQM-JY-lDP"/>
+                            <constraint firstItem="No8-CG-Kb3" firstAttribute="leading" secondItem="IZY-tr-GlD" secondAttribute="leading" id="MOu-Op-ZRW"/>
+                            <constraint firstItem="No8-CG-Kb3" firstAttribute="top" secondItem="jC6-uj-ePt" secondAttribute="bottom" id="RQB-dW-GLR"/>
+                            <constraint firstItem="p5M-Nf-bwT" firstAttribute="top" secondItem="No8-CG-Kb3" secondAttribute="bottom" id="h4X-SL-wfs"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="1lQ-aB-ma7" id="drW-Tt-eTx"/>
+                        <outlet property="tableView" destination="No8-CG-Kb3" id="c0V-vv-U2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQx-d9-1FX" userLabel="First Responder" sceneMemberID="firstResponder"/>

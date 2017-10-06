@@ -16,6 +16,9 @@
 		1B8131E71F82331B00D7B62C /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131E61F82331B00D7B62C /* SnapsViewController.swift */; };
 		1B8131E91F82393D00D7B62C /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131E81F82393D00D7B62C /* PictureViewController.swift */; };
 		1B8131EB1F845B1500D7B62C /* selectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131EA1F845B1500D7B62C /* selectUserViewController.swift */; };
+		1B8131ED1F863BA300D7B62C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131EC1F863BA300D7B62C /* User.swift */; };
+		1B8131F11F86F7F200D7B62C /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131F01F86F7F200D7B62C /* Snap.swift */; };
+		1B8131F31F870F0400D7B62C /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8131F21F870F0400D7B62C /* ViewSnapViewController.swift */; };
 		D1D379882F6B23DE2657D8B2 /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A13BC94960E719D2DCCD5DB /* Pods_Snapchat.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		1B8131E61F82331B00D7B62C /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		1B8131E81F82393D00D7B62C /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		1B8131EA1F845B1500D7B62C /* selectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUserViewController.swift; sourceTree = "<group>"; };
+		1B8131EC1F863BA300D7B62C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1B8131F01F86F7F200D7B62C /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		1B8131F21F870F0400D7B62C /* ViewSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		4A13BC94960E719D2DCCD5DB /* Pods_Snapchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5965092883067125649D61 /* Pods-Snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,11 +84,9 @@
 		1B48300F1F821789000431DE /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				1B8131EE1F863C0D00D7B62C /* ViewControllers */,
+				1B8131EF1F863C2100D7B62C /* Models */,
 				1B4830101F821789000431DE /* AppDelegate.swift */,
-				1B4830121F821789000431DE /* SignInViewController.swift */,
-				1B8131E61F82331B00D7B62C /* SnapsViewController.swift */,
-				1B8131E81F82393D00D7B62C /* PictureViewController.swift */,
-				1B8131EA1F845B1500D7B62C /* selectUserViewController.swift */,
 				1B4830141F821789000431DE /* Main.storyboard */,
 				1B4830171F821789000431DE /* Assets.xcassets */,
 				1B4830191F821789000431DE /* LaunchScreen.storyboard */,
@@ -90,6 +94,27 @@
 				1B4830221F821A4F000431DE /* GoogleService-Info.plist */,
 			);
 			path = Snapchat;
+			sourceTree = "<group>";
+		};
+		1B8131EE1F863C0D00D7B62C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B4830121F821789000431DE /* SignInViewController.swift */,
+				1B8131E61F82331B00D7B62C /* SnapsViewController.swift */,
+				1B8131E81F82393D00D7B62C /* PictureViewController.swift */,
+				1B8131EA1F845B1500D7B62C /* selectUserViewController.swift */,
+				1B8131F21F870F0400D7B62C /* ViewSnapViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B8131EF1F863C2100D7B62C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B8131EC1F863BA300D7B62C /* User.swift */,
+				1B8131F01F86F7F200D7B62C /* Snap.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6D7510C9CDBBD6FC6D288E43 /* Frameworks */ = {
@@ -215,6 +240,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -222,6 +248,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -239,7 +266,10 @@
 			files = (
 				1B4830131F821789000431DE /* SignInViewController.swift in Sources */,
 				1B8131E91F82393D00D7B62C /* PictureViewController.swift in Sources */,
+				1B8131ED1F863BA300D7B62C /* User.swift in Sources */,
+				1B8131F31F870F0400D7B62C /* ViewSnapViewController.swift in Sources */,
 				1B4830111F821789000431DE /* AppDelegate.swift in Sources */,
+				1B8131F11F86F7F200D7B62C /* Snap.swift in Sources */,
 				1B8131E71F82331B00D7B62C /* SnapsViewController.swift in Sources */,
 				1B8131EB1F845B1500D7B62C /* selectUserViewController.swift in Sources */,
 			);

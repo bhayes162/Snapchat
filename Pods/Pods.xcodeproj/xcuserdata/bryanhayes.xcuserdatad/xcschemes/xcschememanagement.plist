@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>584D5DE148371C4A55FF4D51117FFC0B</key>
+		<key>904CE7F6FD8F052103AD969B7DA522E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E19900B032D4241A5B4F91DC63E053D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
